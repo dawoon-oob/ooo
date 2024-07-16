@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Store Hashtags</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #hashtag { font-size: 20px; margin: 20px; }
+        #copy-button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>팝업스토어 필수 해시태그</h1>
+    <p id="hashtag">#팝업스토어 #이벤트 #해시태그</p>
+    <button id="copy-button">해시태그 복사</button>
+
+    <script>
+        document.getElementById('copy-button').addEventListener('click', function() {
+            var hashtagText = document.getElementById('hashtag').innerText;
+            navigator.clipboard.writeText(hashtagText).then(function() {
+                alert('해시태그가 클립보드에 복사되었습니다!');
+            }, function(err) {
+                alert('복사 실패: ' + err);
+            });
+        });
+    </script>
+</body>
+</html>
